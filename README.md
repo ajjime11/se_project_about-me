@@ -1,4 +1,4 @@
-My Story - A Personal Profile
+My Story - A Personal Profile - 
 This project is a personal profile website built to showcase my professional background and personal interests. The site is a static one-page application designed to be clean, responsive, and easy to navigate. It was created as part of my journey to become a well-rounded software engineer.
 
 Technologies Used
