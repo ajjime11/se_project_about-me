@@ -1,113 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-  
   <head>
     <meta charset="UTF-8" />
-    <title>My Story</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="fonts/fonts.css" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="https://practicum-content.s3.us-west-1.amazonaws.com/web-code/favicon.ico"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Alejandro J." />
+    <meta
+      name="description"
+      content="A personal portfolio page for Alejandro J., a software engineer."
     />
+    <title>About Me - Alejandro J.</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* --- Base Styles & Customizations --- */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f0f2f5; /* A slightly softer background */
+      }
+
+      /* Simple animation for modal fade-in */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .modal-fade-in {
+        animation: fadeIn 0.2s ease-out forwards;
+      }
+
+      /* Custom scrollbar for a cleaner look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      /* Added a subtle border to images for better definition */
+      .profile-image {
+        border: 4px solid white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+    </style>
   </head>
-
-  <body class="page">
-
-    <header class="header">
-      <div class="overlay">
-        <p class="header__banner">Software Engineer</p>
-        <h1 class="header__title">Alejandro Jimenez</h1>
-      </div>
+  <body class="text-gray-800 antialiased">
+    <!-- Header Section -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-2xl font-bold text-gray-900">Alejandro J.</div>
+        <div>
+          <button
+            id="contact-button"
+            class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
+          >
+            Contact Me
+          </button>
+        </div>
+      </nav>
     </header>
 
-    <main class="content">
+    <!-- Main Content -->
+    <main class="container mx-auto p-6 md:p-8">
+      <section
+        id="about"
+        class="bg-white p-8 rounded-2xl shadow-lg flex flex-col md:flex-row items-center gap-8"
+      >
+        <!-- Profile Image -->
+        <img
+          src="images/cover_image.jpg"
+          alt="Profile picture of Alejandro"
+          class="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover profile-image"
+        />
 
-      <div class="card">
-        <img src="./images/compressed-version-5.jpeg" alt="An image pertaining to travel appears here." class="card__image">
-        <div class="card__content">
-          <h2 class="card__title">Travel</h2>
-          <p class="card__text">From a young age, the world has been my 
-            playground. I've traversed continents, immersing myself in 
-            the vibrant tapestry of diverse cultures. From savoring 
-            authentic street food in Mexico to marveling at ancient 
-            ruins in Italy and witnessing the passion of tango in 
-            Argentina, each journey has been a transformative experience. 
-            Whether it's through sampling local cuisine, engaging in 
-            traditional celebrations, or simply observing daily life, 
-            I've gained a profound appreciation for the richness and 
-            variety of human experience. My wanderlust is insatiable, 
-            and I'm eager to continue exploring the world, collecting 
-            stories and memories along the way.</p>
+        <!-- About Me Text -->
+        <div class="text-center md:text-left">
+          <h1 class="text-4xl font-bold text-gray-900 mb-2">
+            Hello, I'm Alejandro!
+          </h1>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            A recent graduate of the TripleTen Software Engineering bootcamp
+            with a passion for building clean, efficient, and impactful back-end
+            solutions. I thrive on solving complex problems and am always
+            seeking opportunities to learn and grow in the tech world. My goal
+            is to contribute to projects that make a real difference.
+          </p>
         </div>
-      </div>
+      </section>
 
-      <div class="card">
-        <img src="./images/compressed-version-3.jpeg" alt="An image pertaining to sports appears here." class="card__image">
-        <div class="card__content">
-          <h2 class="card__title">Sports</h2>
-          <p class="card__text">Sports have been a cornerstone 
-            of my life since I was a young child. My journey 
-            began with basketball, dribbling and shooting hoops 
-            in a YMCA league at the tender age of four. I also 
-            embraced other sports, spending summers honing my 
-            skills at swim & dive camps and creating lasting 
-            memories on the little league baseball field. 
-            Though soccer ultimately captured my heart, 
-            leading me to become a devoted Chelsea fan, the 
-            lessons learned from various sports have shaped me 
-            profoundly. Beyond the thrill of competition, sports 
-            instilled in me the values of teamwork, discipline, 
-            and resilience, fostering camaraderie and a lifelong 
-            passion for athletic pursuits.</p>
+      <!-- Hobbies Section -->
+      <section id="hobbies" class="mt-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">
+          My Hobbies
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Hobby Card 1: Soccer -->
+          <div
+            class="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:scale-105 transition duration-300"
+          >
+            <img
+              src="images/soccer.jpeg"
+              alt="A soccer ball on a field"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold text-gray-900">Watching Soccer</h3>
+            <p class="text-gray-600 mt-2">
+              I'm a huge soccer fan, especially when it comes to following
+              Chelsea FC. Nothing beats the excitement of a weekend match!
+            </p>
+          </div>
+          <!-- Hobby Card 2: Music -->
+          <div
+            class="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:scale-105 transition duration-300"
+          >
+            <img
+              src="images/music.jpg"
+              alt="Headphones on a colorful background"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold text-gray-900">
+              Listening to Music
+            </h3>
+            <p class="text-gray-600 mt-2">
+              Music is a huge part of my life. I love discovering new artists
+              and creating playlists for every mood and occasion.
+            </p>
+          </div>
+          <!-- Hobby Card 3: Travel -->
+          <div
+            class="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:scale-105 transition duration-300"
+          >
+            <img
+              src="images/travel.jpeg"
+              alt="A scenic travel destination"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold text-gray-900">Traveling</h3>
+            <p class="text-gray-600 mt-2">
+              I enjoy exploring new places, experiencing different cultures, and
+              creating lasting memories from my travels.
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div class="card">
-        <img src="./images/compressed-version-2.jpeg" alt="An image pertaining to video games appears here." class="card__image">
-        <div class="card__content">
-          <h2 class="card__title">Video Games</h2>
-          <p class="card__text">Video games have been a lifelong companion, 
-            sparking joy and camaraderie since my early days with Crash 
-            Bandicoot on the PlayStation 1. From countless Mario Party 
-            battles to intense Call of Duty: Zombies sessions and epic 
-            Super Smash Bros showdowns, gaming has always been a social 
-            glue, bonding me with friends and creating unforgettable 
-            memories.My passion for gaming even led me to competitive 
-            success, reaching the top 1% in both League of Legends and 
-            Overwatch, and proudly representing my university's team in a 
-            national tournament. Though I've shifted away from the 
-            competitive scene, gaming remains an integral part of my life, 
-            offering a fun and relaxing escape.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="./images/compressed-version-4.jpg" alt="An image pertaining to music appears here." class="card__image">
-        <div class="card__content">
-          <h2 class="card__title">Music</h2>
-          <p class="card__text">Music has been a constant companion, 
-            weaving a soundtrack to my life's journey. From my first 
-            iPod nano to the cherished "Meteora" album gifted by my 
-            grandma, each song has held a special meaning. Inspired 
-            by my brother's love for bands like Sum 41, Nirvana, and 
-            Blink-182, I delved into the world of rock music, attending 
-            unforgettable concerts and immersing myself in the energy 
-            and emotion of live performances. While rock remains a 
-            cornerstone of my musical taste, my love for music extends 
-            beyond genre boundaries. I find myself equally captivated 
-            by the pulsating beats of EDM artists like Martin Garrix, 
-            DJ Snake, and David Guetta, and the raw lyricism of 
-            Hip-Hop/Rap icons like Travis Scott, Drake, and Gunna.</p>
-        </div>
-      </div>
-
+      </section>
     </main>
-    <footer class="footer">
-      <p class="footer__author">Alejandro Jimenez &#169; 2024</p>>
-    </footer>
+
+    <!-- Contact Me Modal -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden"
+    >
+      <div
+        class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md modal-fade-in relative"
+      >
+        <button
+          id="close-button"
+          aria-label="Close modal"
+          class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+          Contact Information
+        </h2>
+        <div class="space-y-4">
+          <p class="text-lg text-gray-700">
+            <strong>Name:</strong> Alejandro J.
+          </p>
+          <p class="text-lg text-gray-700">
+            <strong>LinkedIn:</strong>
+            <a
+              href="https://www.linkedin.com/in/alejandro-jimenez-obregon/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 hover:underline"
+              >View Profile</a
+            >
+          </p>
+          <p class="text-lg text-gray-700">
+            <strong>Email:</strong>
+            <a
+              href="mailto:ajjime11@asu.edu"
+              class="text-blue-600 hover:underline"
+              >ajjime11@asu.edu</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+      // --- Clean & Organized JavaScript ---
+
+      // Wait for the DOM to be fully loaded before running scripts
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- Element Selection ---
+        // Grouping element selections at the top for clarity and easy access.
+        const contactButton = document.getElementById("contact-button");
+        const modal = document.getElementById("modal");
+        const closeButton = document.getElementById("close-button");
+
+        // --- Function Definitions ---
+        // Using clear, descriptive function names.
+
+        /**
+         * Opens the contact modal with a fade-in effect.
+         */
+        const openModal = () => {
+          modal.classList.remove("hidden");
+        };
+
+        /**
+         * Closes the contact modal.
+         */
+        const closeModal = () => {
+          modal.classList.add("hidden");
+        };
+
+        // --- Event Listeners ---
+        // Centralized event listener setup.
+
+        // Open modal when the contact button is clicked.
+        if (contactButton) {
+          contactButton.addEventListener("click", openModal);
+        }
+
+        // Close modal when the close button is clicked.
+        if (closeButton) {
+          closeButton.addEventListener("click", closeModal);
+        }
+
+        // Close modal when clicking outside of the modal content area.
+        if (modal) {
+          modal.addEventListener("click", (event) => {
+            // event.target is the element that was actually clicked.
+            // If the click was on the modal background itself (not its children), close it.
+            if (event.target === modal) {
+              closeModal();
+            }
+          });
+        }
+
+        // Close modal when the 'Escape' key is pressed.
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+            closeModal();
+          }
+        });
+      });
+    </script>
   </body>
 </html>
-
-<!-- hello this is a comment --> 
