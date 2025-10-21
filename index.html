@@ -3,41 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Alejandro J." />
+    <meta name="author" content="Alejandro Jimenez" />
     <meta
       name="description"
-      content="A personal portfolio page for Alejandro J., a software engineer."
+      content="A personal portfolio page for Alejandro Jimenez, a software engineer."
     />
-    <title>About Me - Alejandro J.</title>
-
-    <!-- SEO & Social Media Meta Tags (Open Graph) -->
-    <meta property="og:title" content="About Me - Alejandro J." />
-    <meta
-      property="og:description"
-      content="A personal portfolio page for Alejandro J., a software engineer and recent graduate of the TripleTen bootcamp."
-    />
-    <meta
-      property="og:image"
-      content="https://raw.githubusercontent.com/ajjime11/se_project_about-me/main/images/cover_image.jpg"
-    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
     <meta
       property="og:url"
       content="https://ajjime11.github.io/se_project_about-me/"
     />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="About Me - Alejandro J." />
+    <meta property="og:title" content="About Me - Alejandro Jimenez" />
     <meta
-      name="twitter:description"
-      content="A personal portfolio page for Alejandro J., a software engineer and recent graduate of the TripleTen bootcamp."
+      property="og:description"
+      content="A personal portfolio page for Alejandro Jimenez, a software engineer."
     />
     <meta
-      name="twitter:image"
-      content="https://raw.githubusercontent.com/ajjime11/se_project_about-me/main/images/cover_image.jpg"
+      property="og:image"
+      content="https://raw.githubusercontent.com/ajjime11/se_project_about-me/main/images/project-screenshot.png"
     />
 
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://ajjime11.github.io/se_project_about-me/"
+    />
+    <meta property="twitter:title" content="About Me - Alejandro Jimenez" />
+    <meta
+      property="twitter:description"
+      content="A personal portfolio page for Alejandro Jimenez, a software engineer."
+    />
+    <meta
+      property="twitter:image"
+      content="https://raw.githubusercontent.com/ajjime11/se_project_about-me/main/images/project-screenshot.png"
+    />
+
+    <title>About Me - Alejandro Jimenez</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,13 +48,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       /* --- Base Styles & Customizations --- */
       html {
-        /* OPTIMIZATION: Enables smooth scrolling when navigation links are clicked. */
         scroll-behavior: smooth;
       }
       body {
@@ -103,17 +104,8 @@
       <nav
         class="container mx-auto px-6 py-4 flex justify-between items-center"
       >
-        <a href="#" class="text-2xl font-bold text-gray-900">Alejandro J.</a>
-        <div class="flex items-center space-x-4">
-          <!-- OPTIMIZATION: Added navigation links for smooth scrolling -->
-          <a href="#about" class="text-gray-600 hover:text-blue-600 transition"
-            >About</a
-          >
-          <a
-            href="#hobbies"
-            class="text-gray-600 hover:text-blue-600 transition"
-            >Hobbies</a
-          >
+        <div class="text-2xl font-bold text-gray-900">Alejandro Jimenez</div>
+        <div>
           <button
             id="contact-button"
             class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
@@ -131,13 +123,13 @@
         class="bg-white p-8 rounded-2xl shadow-lg flex flex-col md:flex-row items-center gap-8"
       >
         <!-- Profile Image -->
-        <!-- OPTIMIZATION: Added width and height to prevent layout shift. -->
         <img
           src="images/cover_image.jpg"
           alt="Profile picture of Alejandro"
           class="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover profile-image"
           width="192"
           height="192"
+          loading="lazy"
         />
 
         <!-- About Me Text -->
@@ -156,7 +148,7 @@
       </section>
 
       <!-- Hobbies Section -->
-      <section id="hobbies" class="mt-12">
+      <section id="hobbies" class="mt-8">
         <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">
           My Hobbies
         </h2>
@@ -165,14 +157,13 @@
           <div
             class="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:scale-105 transition duration-300"
           >
-            <!-- OPTIMIZATION: Lazy loading defers loading until the image is needed. Width/height prevent layout shift. -->
             <img
               src="images/soccer.jpeg"
               alt="A soccer ball on a field"
               class="w-full h-48 object-cover rounded-lg mb-4"
+              width="400"
+              height="192"
               loading="lazy"
-              width="1200"
-              height="801"
             />
             <h3 class="text-xl font-semibold text-gray-900">Watching Soccer</h3>
             <p class="text-gray-600 mt-2">
@@ -188,9 +179,9 @@
               src="images/music.jpg"
               alt="Headphones on a colorful background"
               class="w-full h-48 object-cover rounded-lg mb-4"
+              width="400"
+              height="192"
               loading="lazy"
-              width="1200"
-              height="800"
             />
             <h3 class="text-xl font-semibold text-gray-900">
               Listening to Music
@@ -208,9 +199,9 @@
               src="images/travel.jpeg"
               alt="A scenic travel destination"
               class="w-full h-48 object-cover rounded-lg mb-4"
+              width="400"
+              height="192"
               loading="lazy"
-              width="1200"
-              height="800"
             />
             <h3 class="text-xl font-semibold text-gray-900">Traveling</h3>
             <p class="text-gray-600 mt-2">
@@ -221,51 +212,6 @@
         </div>
       </section>
     </main>
-
-    <!-- OPTIMIZATION: Added a footer for a professional finish and social links. -->
-    <footer class="bg-white mt-12 py-6">
-      <div class="container mx-auto text-center text-gray-600">
-        <div class="flex justify-center space-x-6 mb-4">
-          <a
-            href="https://github.com/ajjime11"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-blue-600 transition"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/alejandro-jimenez-obregon/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:text-blue-600 transition"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-              />
-            </svg>
-          </a>
-        </div>
-        <p>&copy; 2025 Alejandro J. All Rights Reserved.</p>
-      </div>
-    </footer>
 
     <!-- Contact Me Modal -->
     <div
@@ -300,7 +246,7 @@
         </h2>
         <div class="space-y-4">
           <p class="text-lg text-gray-700">
-            <strong>Name:</strong> Alejandro J.
+            <strong>Name:</strong> Alejandro Jimenez
           </p>
           <p class="text-lg text-gray-700">
             <strong>LinkedIn:</strong>
@@ -308,8 +254,8 @@
               href="https://www.linkedin.com/in/alejandro-jimenez-obregon/"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-blue-600 hover:underline"
-              >View Profile</a
+              class="text-blue-600 hover:underline break-all"
+              >linkedin.com/in/alejandro-jimenez-obregon</a
             >
           </p>
           <p class="text-lg text-gray-700">
@@ -323,6 +269,16 @@
         </div>
       </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-12 py-6 border-t">
+      <div class="container mx-auto text-center text-gray-600">
+        <p>&copy; 2025 Alejandro Jimenez. All Rights Reserved.</p>
+        <p class="text-sm mt-2">
+          Built with HTML, Tailwind CSS, and a passion for clean code.
+        </p>
+      </div>
+    </footer>
 
     <!-- JavaScript Logic -->
     <script>
